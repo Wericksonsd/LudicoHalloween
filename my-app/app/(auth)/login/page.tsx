@@ -6,7 +6,7 @@ export default function Login () {
     const router = useRouter()
 
     return (
-        <div className=" flex-1 w-full flex flex-col items-center justify-end gap-4 bg-[url(/bgQuadro.png)] bg-cover bg-zinc-900 bg-blend-multiply px-9 py-22">
+        <div className=" flex-1 w-full flex flex-col items-center justify-end gap-4 bg-[url(/bgQuadro.png)] bg-cover bg-zinc-900 bg-blend-multiply px-11 py-22">
             <h1 className="text-5xl font-bold">
                 S.A.E.O.S
             </h1>

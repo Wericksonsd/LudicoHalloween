@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Lilex, Kumar_One } from "next/font/google";
-import "./globals.css";
+import { Lilex, Gravitas_One } from "next/font/google";
+import "../globals.css";
 
 const lilex = Lilex({
   variable: "--font-lilex",
   subsets: ["latin"],
 });
 
-const kumarOne = Kumar_One({
-  variable: "--font-kumar-one",
+const gravitasOne = Gravitas_One({
+  variable: "--font-gravitas-one",
   subsets: ["latin"],
   weight: "400",
 });
@@ -22,9 +22,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-br"
-      className={`${lilex.variable} ${kumarOne.variable} h-full antialiased`}
+      className={`${lilex.variable} ${gravitasOne.variable} h-full antialiased`}
     >
-      <body className="min-h-dvh flex flex-col">{children}</body>
+      
+      <body className="min-h-dvh flex flex-col">
+        {children}
+      </body>
+      
     </html>
   );
 }
