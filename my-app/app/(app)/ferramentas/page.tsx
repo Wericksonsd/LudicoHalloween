@@ -15,15 +15,15 @@ export default function Ferramentas() {
     const [currentBar, setCurrentBar] = useState(0)
 
     function updateCyanBar() {
-        setCyanBar([amplitudeBar * 35,  equalizeBar * 10, rotationBar * 20])
+        setCyanBar([amplitudeBar * 35,  equalizeBar * 10, rotationBar * 10])
     }
 
     function updateMagentaBar() {
-        setMagentaBar([amplitudeBar * 35, equalizeBar * 10, rotationBar * 20])
+        setMagentaBar([amplitudeBar * 35, equalizeBar * 10, rotationBar * 10])
     }
 
     function updateYellowBar() {
-        setYellowBar([amplitudeBar * 35, equalizeBar * 10, rotationBar * 20])
+        setYellowBar([amplitudeBar * 35, equalizeBar * 10, rotationBar * 10])
     }
 
     function handleBarChange(barNumber: number) {   
@@ -36,17 +36,17 @@ export default function Ferramentas() {
             case 1:
                 setAmplitudeBar(cyanBar[0]/35)
                 setEqualizeBar(cyanBar[1]/10)
-                setRotationBar(cyanBar[2]/20)
+                setRotationBar(cyanBar[2]/10)
                 break
             case 2:
                 setAmplitudeBar(magentaBar[0]/35)
                 setEqualizeBar(magentaBar[1]/10)
-                setRotationBar(magentaBar[2]/20)
+                setRotationBar(magentaBar[2]/10)
                 break
             case 3:
                 setAmplitudeBar(yellowBar[0]/35)
                 setEqualizeBar(yellowBar[1]/10)
-                setRotationBar(yellowBar[2]/20)
+                setRotationBar(yellowBar[2]/10)
                 break
         }
     }
@@ -151,7 +151,7 @@ export default function Ferramentas() {
                     </div>
 
                     <div className="w-full text-zinc-100 flex flex-col">
-                        <input type="range" id='rotacao' min={0} max={18} value={rotationBar}
+                        <input type="range" id='rotacao' min={0} max={36} value={rotationBar}
                         onChange={(e) => setRotationBar(parseInt(e.target.value))}
                         className="h-1 w-full"/>
                         <div className="w-full grid grid-cols-3 text-center text-sm">
