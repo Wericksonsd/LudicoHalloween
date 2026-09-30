@@ -1,0 +1,8 @@
+{
+    "enemie": [
+        {"id": 1, "nome": "Banshee", "regiao": "Europa", "emf": [[-4,2,17],[-1,3,5],[2,1,12]]},
+        {"id": 2, "nome": "Ghoull", "regiao": "America", "emf": [[-1,-4,2],[-2,-3,1],[1,2,-1]]},
+        {"id": 3, "nome": "Oni", "regiao": "Asia", "emf": [[4,-1,5],[2,3,-2],[1,2,3]]},
+        {"id": 4, "nome": "Spirit", "regiao": "Mundial", "emf": [[-2,4,1],[1,-3,2],[-1,2,-4]]}
+    ]
+}

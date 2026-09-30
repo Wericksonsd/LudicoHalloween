@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
+import dados from "../../dataBank/enemies.json"
 
 
 export default function Ferramentas() {
@@ -12,23 +13,65 @@ export default function Ferramentas() {
     const [magentaBar, setMagentaBar] = useState([0,0,0])
     const [yellowBar, setYellowBar] = useState([0,0,0])
 
+    const [cyanBarCorrect, setCyanBarCorrect] = useState(false)
+    const [magentaBarCorrect, setMagentaBarCorrect] = useState(false)
+    const [yellowBarCorrect, setYellowBarCorrect] = useState(false)
+
     const [currentBar, setCurrentBar] = useState(0)
+
+    const [enemieAtual, setEnemieAtual] = useState(dados.enemie[0])
 
     function updateCyanBar() {
         setCyanBar([amplitudeBar * 35,  equalizeBar * 10, rotationBar * 10])
+        correctBarValues(0, cyanBar)
+        console.log(cyanBar[0]/35, cyanBar[1]/10, cyanBar[2]/10, cyanBarCorrect)
     }
 
     function updateMagentaBar() {
         setMagentaBar([amplitudeBar * 35, equalizeBar * 10, rotationBar * 10])
+        correctBarValues(1, magentaBar)
     }
 
     function updateYellowBar() {
         setYellowBar([amplitudeBar * 35, equalizeBar * 10, rotationBar * 10])
+        correctBarValues(2, yellowBar)
     }
 
     function handleBarChange(barNumber: number) {   
         resetBars(barNumber)
         setCurrentBar(barNumber)
+    }
+
+    function correctBarValues(barType: number, barNumber: number[]) {
+        const barra = enemieAtual.emf[barType]
+
+        if (barra[0] === barNumber[0]/35 &&
+        barra[1] === barNumber[1]/10 &&
+        barra[2] === barNumber[2]/10) {
+            switch(barType) {
+                case 0:
+                    setCyanBarCorrect(true)
+                    break
+                case 1:
+                    setMagentaBarCorrect(true)
+                    break
+                case 2:
+                    setYellowBarCorrect(true)
+                    break
+            }
+        } else {
+            switch(barType) {
+                case 0:
+                    setCyanBarCorrect(false)
+                    break
+                case 1:
+                    setMagentaBarCorrect(false)
+                    break
+                case 2:
+                    setYellowBarCorrect(false)
+                    break
+            }
+        }
     }
 
     function resetBars(barNumber: number) {
@@ -75,13 +118,13 @@ export default function Ferramentas() {
             <h1>Ferramentas</h1>
 
             <div className="h-100 w-full border-3 border-amber-300 relative overflow-hidden flex items-center justify-center">
-                <div className="bg-cyan-300 absolute h-2 w-1/2"
+                <div className={`${cyanBarCorrect ? 'bg-cyan-100' : 'bg-cyan-700'} absolute h-2 w-1/2`}
                     style={{ transform: `translateY(${cyanBar[0]}px) translateX(${cyanBar[1]}%) rotate(${cyanBar[2]}deg)`}}>
                 </div>
-                <div className="bg-pink-600 absolute h-2 w-1/2"
+                <div className={`${magentaBarCorrect ? 'bg-pink-100' : 'bg-pink-700'} absolute h-2 w-1/2`}
                     style={{ transform: `translateY(${magentaBar[0]}px) translateX(${magentaBar[1]}%) rotate(${magentaBar[2]}deg)`}}>
                 </div>
-                <div className="bg-yellow-300 absolute h-2 w-1/2"
+                <div className={`${yellowBarCorrect ? 'bg-yellow-100' : 'bg-yellow-500'} absolute h-2 w-1/2`}
                     style={{ transform: `translateY(${yellowBar[0]}px) translateX(${yellowBar[1]}%) rotate(${yellowBar[2]}deg)`}}>
                 </div>
             </div>
@@ -151,7 +194,7 @@ export default function Ferramentas() {
                     </div>
 
                     <div className="w-full text-zinc-100 flex flex-col">
-                        <input type="range" id='rotacao' min={0} max={36} value={rotationBar}
+                        <input type="range" id='rotacao' min={0} max={18} value={rotationBar}
                         onChange={(e) => setRotationBar(parseInt(e.target.value))}
                         className="h-1 w-full"/>
                         <div className="w-full grid grid-cols-3 text-center text-sm">
