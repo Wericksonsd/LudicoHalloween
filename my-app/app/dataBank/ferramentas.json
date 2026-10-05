@@ -1,0 +1,44 @@
+{
+    "ferramentas": [
+        {
+            "id": 1,
+            "nome": "Leitor EMF",
+            "descricao": "Detecta campos magnéticos para determinar a agresão de um fantasma.",
+            "liberada": true,
+            "icon": "PanelTopBottomDashed",
+            "linkTo": "/ferramentas/emf"
+        },
+        {
+            "id": 2,
+            "nome": "Luz UV",
+            "descricao": "Capture vestígios dos fantasmas.",
+            "liberada": true,
+            "icon": "Flashlight",
+            "linkTo": "/ferramentas/uv"
+        },
+        {
+            "id": 3,
+            "nome": "Tabuleiro Ouija",
+            "descricao": "Comunique-se com os espíritos.",
+            "liberada": true,
+            "icon": "KeyboardMusic",
+            "linkTo": "/ferramentas/ouija"
+        },
+        {
+            "id": 4,
+            "nome": "Retalhos",
+            "descricao": "Análise relatos de testemunhas para identificar padrões de comportamento.",
+            "liberada": false,
+            "icon": "KeyboardMusic",
+            "linkTo": "/ferramentas/ouija"
+        },
+        {
+            "id": 5,
+            "nome": "Retalhos",
+            "descricao": "Análise relatos de testemunhas para identificar padrões de comportamento.",
+            "liberada": false,
+            "icon": "KeyboardMusic",
+            "linkTo": "/ferramentas/ouija"
+        }
+    ]
+}
