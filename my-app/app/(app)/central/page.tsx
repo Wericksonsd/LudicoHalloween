@@ -19,7 +19,7 @@ export default function Central () {
     }
 
     return(
-        <div className="flex-1 w-full flex flex-col items-center gap-4 px-12 py-4 bg-zinc-800">
+        <div className="flex-1 w-full flex flex-col items-center gap-4 px-6 py-4 bg-zinc-800">
             <Titulo/>            
             <div className="w-full flex-1 py-6 px-2 bg-orange-300 rounded-xs text-center text-zinc-950 flex flex-col items-center justify-center gap-1" onClick={() => router.push("/cameraQRCode")}>
                 <span className="p-2 border-2 border-dashed rounded-md">

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import dados from "../../../dataBank/enemies.json"
+import dados from "../../../dataBank/fantasmas.json"
 
 
 export default function Ferramentas() {
