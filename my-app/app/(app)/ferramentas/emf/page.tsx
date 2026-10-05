@@ -19,7 +19,7 @@ export default function Ferramentas() {
 
     const [currentBar, setCurrentBar] = useState(0)
 
-    const [enemieAtual, setEnemieAtual] = useState(dados.enemie[0])
+    const [enemieAtual, setEnemieAtual] = useState(dados.fantasmas[0])
 
     function updateCyanBar() {
         setCyanBar([amplitudeBar,  equalizeBar, rotationBar])
