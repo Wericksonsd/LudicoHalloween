@@ -94,7 +94,7 @@ export default function Ferramentas() {
         }
     }
 
-    function handleSliders (currentSlider: number) {
+    /*function handleSliders (currentSlider: number) {
         switch (currentSlider) {
             case 0:
                 
@@ -113,9 +113,9 @@ export default function Ferramentas() {
                 updateYellowBar()
                 break
         }
-    }
+    }*/
 
-    /*useEffect(() => {
+    useEffect(() => {
         switch(currentBar) {
             case 0:
                 break
@@ -129,7 +129,7 @@ export default function Ferramentas() {
                 updateYellowBar()
                 break
         }
-    }, [amplitudeBar, rotationBar, equalizeBar])*/
+    }, [amplitudeBar, rotationBar, equalizeBar])
     
     
 
