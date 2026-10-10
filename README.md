@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>PROJETO C.A.S.S.I.O<br><sub>Central de Análise de Seres Sobrenaturais e Interação com o Oculto</sub></h1>
+<h1>PROJETO C.A.S.S.I.O<br><sub>Central de Análise de Seres Sobrenaturais e Investigação Oculta</sub></h1>
 <h3>Sistema desenvolvido para o Evento de Halloween 2026 do projeto de extensão Lúdico</h3>
 <br>
 <br>
