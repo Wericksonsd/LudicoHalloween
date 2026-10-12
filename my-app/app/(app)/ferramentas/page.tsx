@@ -1,12 +1,15 @@
-import Titulo from "../central/components/titulo"
+import Titulo from "../central/components/infosTituto"
 import dados from "../../dataBank/ferramentas.json"
 import CardsFerramentas from "./components/cards"
 
 export default function Ferramentas() {
     return(
-        <div className="flex-1 flex flex-col gap-4 px-6 py-4">
-            <Titulo/>
-            <div className="flex-1 grid grid-rows-5 gap-4 pb-8">
+        <div className="flex-1 flex flex-col px-6 py-4 bg-zinc-800">
+            <h1 className="text-2xl font-bold text-center">FERRAMENTAS</h1>
+            <p className="text-center text-zinc-300 text-sm mb-4">
+                Selecione uma ferramenta para começar a investigar.
+            </p>
+            <div className="flex-1 grid grid-rows-5 gap-4 pb-2">
                 {dados.ferramentas.map(f => (
                 <CardsFerramentas key={f.id} ferramenta={f} liberada={f.liberada} />
                 ))}

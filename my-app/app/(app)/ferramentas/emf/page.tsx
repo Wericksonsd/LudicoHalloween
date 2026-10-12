@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import dados from "../../../dataBank/fantasmas.json"
+import Titulo from "../../../components/titulo"
 
 
 export default function Ferramentas() {
@@ -135,10 +136,14 @@ export default function Ferramentas() {
 
 
     return(
-        <div className="flex-1 flex flex-col items-center justify-between p-8 gap-4">
-            <h1>Ferramentas</h1>
+        <div className="flex-1 w-full flex flex-col items-center justify-between px-6 py-2">
+            <Titulo 
+                titulo="Leitor EMF"
+                subTitulo="Leia e ajuste a frequência de campos eletromagnéticos"
+                hiddenVar={false}
+                helpTExt="Utilize as barras abaixo para ajustar a frequência, marque na caixa de seleção qual barra está ajustando. Após a barra atual ficar totalemnte branca, significa que ela está sincronizada com o sinal" />
 
-            <div className="h-100 w-full border-3 border-amber-300 relative overflow-hidden flex items-center justify-center">
+            <div className="flex-1 w-full border-3 border-orange-300 rounded-md relative overflow-hidden flex items-center justify-center">
                 <div className={`${cyanBarCorrect ? 'bg-cyan-100' : 'bg-cyan-700'} absolute h-2 w-1/2`}
                     style={{ transform: `translateY(${cyanBar[0]*35}px) translateX(${cyanBar[1]*10}%) rotate(${cyanBar[2]*10}deg)`}}>
                 </div>
@@ -172,7 +177,7 @@ export default function Ferramentas() {
             <div className="w-full h-32 flex items-center justify-center gap-2">
                 <div className="h-full grid grid-rows-3 justify-items-end items-start pt-2 text-xs">
                     <p>AMPLITUDE</p>
-                    <p>EQUALIZAÇÃO</p>
+                    <p>LONGITUDE</p>
                     <p>ROTAÇÃO</p>
                 </div>
                 <div className="w-full h-full flex flex-col justify-around">

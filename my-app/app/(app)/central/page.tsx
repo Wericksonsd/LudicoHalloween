@@ -2,9 +2,10 @@
 
 import Link from "next/dist/client/link";
 import { useRouter } from "next/navigation";
-import Titulo from "./components/titulo";
 import { BookOpenText, Camera, RobotVacuum } from "lucide-react";
 import { useState } from "react";
+import ModalIntro from "./components/modalIntro";
+import InfosTitulo from "./components/infosTituto";
 
 export default function Central () {
     const [ferramentas, setFerramentas] = useState(0);
@@ -20,7 +21,7 @@ export default function Central () {
 
     return(
         <div className="flex-1 w-full flex flex-col items-center gap-4 px-6 py-4 bg-zinc-800">
-            <Titulo/>            
+            <InfosTitulo/>            
             <div className="w-full flex-1 py-6 px-2 bg-orange-300 rounded-xs text-center text-zinc-950 flex flex-col items-center justify-center gap-1" onClick={() => router.push("/cameraQRCode")}>
                 <span className="p-2 border-2 border-dashed rounded-md">
                     <Camera size={36}/>
@@ -45,13 +46,7 @@ export default function Central () {
             <button onClick={handleCloseModalIntro} className="w-full p-2 bg-zinc-950 text-orange-300 rounded-2">CARTA DE INTRODUÇÃO</button>    
 
             {modalIntro && (
-                <div className='h-dvh w-dvw absolute top-0 left-0 bg-zinc-950/50 z-10 p-12' onClick={handleCloseModalIntro}>
-                    <div className="h-full w-full bg-orange-300 p-6 flex items-center justify-center">
-                        <h1 className="text-center text-zinc-950 text-md">Boas vindas a Central de Campo, seu objetivo é descobrir qual fantasma você é responsável em conter. Desbloqueie as ferramentas e as utilize para coletar dados, depois, compare esses dados com as dos documentos que lhe foi entregue, assim que tiver certeza de qual fantasma busca, o marque na caixa de seleção e finalize sua operação, mas CUIDADO! <br/>
-                        Caso erre o fantasma terá um espaço de tempo para tentar novamente, e após outra falha, sua missão será dada como fracasso.<br/><br/>
-                        Boa sorte, Agente.</h1>
-                    </div>
-                </div>
+                <ModalIntro onClose={handleCloseModalIntro} />
             )}
 
         </div>

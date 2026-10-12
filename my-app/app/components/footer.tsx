@@ -1,7 +1,7 @@
 'use client'
 
 import { BookOpenText, House, LucideIcon, Notebook, RobotVacuum } from "lucide-react";
-import {useRouter} from "next/navigation";
+import {useRouter, useSelectedLayoutSegments} from "next/navigation";
 
 export default function Footer () {
     const router = useRouter()

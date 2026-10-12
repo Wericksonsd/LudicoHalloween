@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #d4d4d8;
+  --background: #27272a;
 }
 
 @theme inline {
@@ -12,15 +12,8 @@
   --font-sec: var(--font-gravitas-one);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-main), sans-serif;
+  font-family: var(--font-main);
 }

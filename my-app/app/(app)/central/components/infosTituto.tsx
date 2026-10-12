@@ -1,4 +1,4 @@
-export default function Titulo () {
+export default function InfosTitulo () {
     return(
         <div className="w-full flex flex-wrap justify-between items-center px-4">
             <h1 className="text-xl w-full font-bold text-center text-orange-300  font-[Gravitas_One]">CENTRAL DE CAMPO</h1>

@@ -15,7 +15,7 @@ export default function CardsFerramentas({ ferramenta, liberada = false }: Props
 
 return (
     <div
-    className={`h-full mx-4 my-2 px-4 py-2 flex items-center justify-center rounded-2xl
+    className={`h-full px-4 py-2 flex items-center justify-center rounded-2xl
         ${liberada ? "bg-zinc-300 text-zinc-900" : "bg-zinc-600 text-zinc-300"}`}
     >
         {liberada ? (

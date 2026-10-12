@@ -5,6 +5,7 @@ import "./globals.css";
 const lilex = Lilex({
   variable: "--font-lilex",
   subsets: ["latin"],
+  adjustFontFallback: false,
 });
 
 const gravitasOne = Gravitas_One({

@@ -18,8 +18,8 @@
         },
         {
             "id": 3,
-            "nome": "Tabuleiro Ouija",
-            "descricao": "Comunique-se com os espíritos.",
+            "nome": "Resquícios",
+            "descricao": "Recupere antigas notícias e lendas para obter melhores informações.",
             "liberada": true,
             "icon": "KeyboardMusic",
             "linkTo": "/ferramentas/retalhos"
