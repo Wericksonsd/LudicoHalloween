@@ -1,74 +1,71 @@
 'use client'
 
-import Draggable from "./components/draggBox";
-import Droppable from "./components/dropBox";
-import { DragDropProvider } from "@dnd-kit/react";
 import { useState } from "react";
+import Image from "next/image";
 
-const dropBoxes = [
-    { id: 'box1', content: 'Box 1' },
-    { id: 'box2', content: 'Box 2' },
-    { id: 'box3', content: 'Box 3' },
-    { id: 'box4', content: 'Box 4' },
-    { id: 'box5', content: 'Box 5' },
-    { id: 'box6', content: 'Box 6' },
-];
-
-const DraggBoxes = [
-    { id: 'dragg1', title:'1', img: 'bg-blue-400'},
-    { id: 'dragg2', title:'1', img: 'bg-red-400'},
-    { id: 'dragg3', title:'1', img: 'bg-green-400'},
-    { id: 'dragg4', title:'1', img: 'bg-pink-400'},
-    { id: 'dragg5', title:'1', img: 'bg-yellow-400'},
-    { id: 'dragg6', title:'1', img: 'bg-cyan-400'},
-]
 
 export default function Retalhos() {
-    const [droppedIn, setDroppedIn] = useState<string | null>(null);
-    const [activeDraggable, setActiveDraggable] = useState(0);
 
-    function activeDraggBox (num : number){
-        setActiveDraggable(num)
-    }
+    const [discoAzul, setDiscoAzul] = useState(0)
+    const [discoVerde, setDiscoVerde] = useState(0)  
+    const [discoVermelho, setDiscoVermelho] = useState(0)
+
 
     return (
         <div className="flex-1 p-6 flex flex-col">
             <h1 className="text-2xl font-bold text-center">Resquícios</h1>
             <p className="text-center text-sm">Junte os pedaços de jornais para revelar seu passado.</p>
 
-            <DragDropProvider
-            onDragEnd={(event) => {
-                if (event.canceled) return;
-                const target = event.operation.target;
-                setDroppedIn(target ? String(target.id) : null);
-            }}>
-                <div className="flex-1 border-2 border-zinc-300 rounded-lg mt-4 flex flex-col items-center justify-center gap-4">
-                    <div className="w-full grid grid-cols-3 grid-rows-2">
-                        {dropBoxes.map((box) => (
-                            <Droppable key={box.id} id={box.id}>
-                                {droppedIn === box.id && <Draggable idDragg={String(DraggBoxes[activeDraggable].id)} title={String(DraggBoxes[activeDraggable].title)} color={String(DraggBoxes[activeDraggable].img)}/>}
-                            </Droppable>
-                        ))}
-                    </div>
-                    <div className="flex-1 p-4">
-                        {DraggBoxes.map((dragg, i) => (
-                            <Draggable key={dragg.id} idDragg={dragg.id} title={dragg.title} color={dragg.img}
-                            onClick={() => activeDraggBox(i)}/>
-                        ))}
-                    </div>
-                </div>
-            </DragDropProvider>
+            <div className="w-full aspect-square bg-zinc-200 my-8 relative rounded-full">
+                <Image
+                src={"/retalhos/azul-1.svg"} alt="verde" fill
+                className="opacity-75"
+                style={{ transform: `rotate(${discoAzul*10}deg)`}}></Image>
 
-            <div className="w-full p-4 flex items-center justify-center gap-4">
-                <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-                    []
-                </button>
-                <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-                    []
-                </button>
-                <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded">
-                    []
-                </button>
+                <Image
+                src={"/retalhos/verde-1.svg"} alt="verde" fill
+                className="opacity-75"
+                style={{ transform: `rotate(${discoVerde*10}deg)`}}></Image>
+
+                <Image
+                src={"/retalhos/verm-1.svg"} alt="verde" fill
+                className="opacity-75"
+                style={{ transform: `rotate(${discoVermelho*10}deg)`}}></Image>
+            </div>
+
+            <div className="w-full flex justify-between">
+                <div className="relative">
+                    <div className="h-16 w-16 bg-blue-800 rounded-4xl flex items-center justify-start p-2"
+                        style={{ transform: `rotate(${discoAzul*10}deg)`}}>
+                        <div className="h-2 w-2 rounded-4xl bg-zinc-300">
+                        </div>
+                    </div>
+                    <input type="range" id="rotacao" min={0} max={36} value={discoAzul}
+                    onChange={((e) => setDiscoAzul(parseInt(e.target.value)))}
+                    className="w-16 h-16 z-2 -translate-y-14 opacity-0 absolute"/>
+                </div>
+
+                <div className="relative">
+                    <div className="h-16 w-16 bg-green-600 rounded-4xl flex items-center justify-start p-2"
+                        style={{ transform: `rotate(${discoVerde*10}deg)`}}>
+                        <div className="h-2 w-2 rounded-4xl bg-zinc-300">
+                        </div>
+                    </div>
+                    <input type="range" id="rotacao" min={0} max={36} value={discoVerde}
+                    onChange={((e) => setDiscoVerde(parseInt(e.target.value)))}
+                    className="w-16 h-16 z-2 -translate-y-14 opacity-0 absolute"/>
+                </div>
+
+                <div className="relative">
+                    <div className="h-16 w-16 bg-red-800 rounded-4xl flex items-center justify-start p-2"
+                        style={{ transform: `rotate(${discoVermelho*10}deg)`}}>
+                        <div className="h-2 w-2 rounded-4xl bg-zinc-300">
+                        </div>
+                    </div>
+                    <input type="range" id="rotacao" min={0} max={36} value={discoVermelho}
+                    onChange={((e) => setDiscoVermelho(parseInt(e.target.value)))}
+                    className="w-16 h-16 z-2 -translate-y-14 opacity-0 absolute"/>
+                </div>
             </div>
         </div>
     );
