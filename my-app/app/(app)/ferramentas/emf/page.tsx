@@ -95,42 +95,26 @@ export default function Ferramentas() {
         }
     }
 
-    /*function handleSliders (currentSlider: number) {
-        switch (currentSlider) {
-            case 0:
-                
-        }
-
-        switch(currentBar) {
-            case 0:
-                break
-            case 1:
-                updateCyanBar()
-                break
-            case 2:
-                updateMagentaBar()
-                break
-            case 3:
-                updateYellowBar()
-                break
-        }
-    }*/
-
     useEffect(() => {
-        switch(currentBar) {
-            case 0:
-                break
+    if (currentBar === 0) return
+
+        const novosValores = [amplitudeBar, equalizeBar, rotationBar]
+
+        switch (currentBar) {
             case 1:
-                updateCyanBar()
+                setCyanBar(novosValores)
+                correctBarValues(0, novosValores)
                 break
             case 2:
-                updateMagentaBar()
+                setMagentaBar(novosValores)
+                correctBarValues(1, novosValores)
                 break
             case 3:
-                updateYellowBar()
+                setYellowBar(novosValores)
+                correctBarValues(2, novosValores)
                 break
         }
-    }, [amplitudeBar, rotationBar, equalizeBar])
+    }, [amplitudeBar, equalizeBar, rotationBar, currentBar])
     
     
 
