@@ -8,11 +8,11 @@ type Props = {
 
 export default function CardsFantasma({ fantasmas }: Props) {
     return(
-        <div className="w-full flex-1 text-zinc-800 flex flex-col items-center justify-around rounded-lg"
+        <div className="w-full flex-1 text-zinc-800 flex flex-col items-center justify-between rounded-lg"
             style={{backgroundImage: "url('/papiroBG2.png')", backgroundSize: "cover", backgroundPosition: "center"}}>
-            <div className="w-full flex flex-col items-center justify-center px-4">
+            <div className="w-full flex flex-col items-center justify-center px-4 pt-2">
                 <h1 className="text-lg font-black">{fantasmas.nome}</h1>
-                <p className="text-md text-center">{fantasmas.descricao}</p>
+                <p className="text-sm text-center">{fantasmas.descricao}</p>
             </div>
             <div className="w-full flex items-center justify-center pr-2">
                 <Image src={fantasmas.imagem} alt={fantasmas.nome} height={400} width={200} loading="eager" className="flex-1 mix-blend-multiply"/>
